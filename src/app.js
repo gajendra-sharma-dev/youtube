@@ -14,8 +14,18 @@ app.use(express.urlencoded({extended:true,limit:"16kb"}))  //yaha data html ke r
 app.use(express.static("public"))
 
 
-
 app.use(cookieParser())
+
+
+
+//router
+
+import userRouter  from "./router/user.router.js"
+
+
+app.use("/api/v1/users",userRouter)  //https://localhost/api/v1/users/register  and /https://localhost/users/login
+
+
 
 
 export {app}

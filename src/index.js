@@ -1,10 +1,9 @@
 // require('dotenv').config("./env")
 import dotenv from "dotenv"
 import connectDB from "./db/db.js"
-import express from "express"
-const app = express()
-let port = process.env.PORT || 2000;
+import {app} from "./app.js"
 
+let port = process.env.PORT
 dotenv.config({
     path:"./env"
 })
