@@ -1,6 +1,6 @@
 import {v2 as cloudinary} from "cloudinary"
 import fs from "fs" // node.js me hota hai file ko read delte open sab kar sakte hai
-import {Apierror} from "./Apierror";
+import {Apierror} from "./Apierror.js";
 
  cloudinary.config({ 
         cloud_name: process.env.CLOUD_NAME, 
@@ -19,14 +19,19 @@ import {Apierror} from "./Apierror";
          //file upload ho gyi
          console.log("file upload on cloudinary");
          console.log(response.url);
+         fs.unlinkSync(localfilepath)
          return response
          
          
         } catch (error) {
-            fs.unlinkSync(localfilepath)
-            return null;  ///localfile ko remove karta hai
+            console.log("cloudnary error" ,error);
+             if (localfilepath && fs.existsSync(localfilepath)) {
+      fs.unlinkSync(localfilepath)
+           
             
         }
+         return null;  ///localfile ko remove karta hai
+    }
     }
 
     export {uploadCloudinary}

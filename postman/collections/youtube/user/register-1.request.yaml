@@ -1,0 +1,41 @@
+$kind: http-request
+name: register
+description: ""
+url: "{{server}}users/register"
+method: POST
+body:
+  type: formdata
+  content:
+    - type: text
+      key: username
+      value: gajendra
+      description: ""
+      disabled: false
+    - type: text
+      key: fullName
+      value: gajendrasharma
+      description: ""
+      disabled: false
+    - type: text
+      key: email
+      value: gajendra@gmail.com
+      description: ""
+      disabled: false
+    - type: text
+      key: password
+      value: gajendra
+      description: ""
+      disabled: false
+    - type: file
+      key: avatar
+      src:
+        - /C:/Users/GAJENDRA/OneDrive/Pictures/Screenshots/Screenshot 2026-09-07 175910.png
+      description: ""
+      disabled: false
+    - type: file
+      key: coverImage
+      src:
+        - /C:/Users/GAJENDRA/OneDrive/Pictures/Screenshots/Screenshot 2026-09-07 175910.png
+      description: ""
+      disabled: false
+order: 1706550304031283

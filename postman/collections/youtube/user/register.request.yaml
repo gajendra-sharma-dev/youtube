@@ -1,0 +1,16 @@
+$kind: http-request
+description: ""
+url: http://localhost:8000/api/v1/users/register
+method: POST
+body:
+  type: json
+  content: "\r
+
+    \r
+
+    {\r
+
+    \    \"email\":\"gajendra@123\"\r
+
+    }"
+order: 1789013465770

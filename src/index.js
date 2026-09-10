@@ -5,12 +5,15 @@ import {app} from "./app.js"
 
 let port = process.env.PORT
 dotenv.config({
-    path:"./env"
+    path:"./.env"
 })
 
 connectDB().then(()=>{
      app.listen(port,()=>{
+        console.log("hello");
+        
     console.log(`app is listning on ${port}`);
+    
     
   })
 })

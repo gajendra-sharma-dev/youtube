@@ -26,6 +26,12 @@ import userRouter  from "./router/user.router.js"
 app.use("/api/v1/users",userRouter)  //https://localhost/api/v1/users/register  and /https://localhost/users/login
 
 
-
+app.use((err, req, res, next) => {
+    console.error(err)   // terminal mein poora error dikhega
+    return res.status(err.statusCode || 500).json({
+        success: false,
+        message: err.message || "Internal Server Error"
+    })
+})
 
 export {app}

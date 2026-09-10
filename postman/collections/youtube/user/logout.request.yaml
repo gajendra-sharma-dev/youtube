@@ -1,0 +1,18 @@
+$kind: http-request
+description: ""
+url: http://localhost:8000/api/v1/users/logout
+method: POST
+body:
+  type: json
+  content: "\r
+
+    \r
+
+    {\r
+
+    \    \"email\":\"naveen@gmail.com\",\r
+
+    \    \"password\":\"gajendra\"\r
+
+    }"
+order: 4276775211197960
