@@ -3,14 +3,38 @@ description: ""
 url: http://localhost:8000/api/v1/users/register
 method: POST
 body:
-  type: json
-  content: "\r
-
-    \r
-
-    {\r
-
-    \    \"email\":\"gajendra@123\"\r
-
-    }"
+  type: formdata
+  content:
+    - type: text
+      key: username
+      value: naveen
+      description: ""
+      disabled: false
+    - type: text
+      key: fullName
+      value: naveenkuamr
+      description: ""
+      disabled: false
+    - type: text
+      key: email
+      value: naveen@gmail.com
+      description: ""
+      disabled: false
+    - type: text
+      key: password
+      value: gajendra
+      description: ""
+      disabled: false
+    - type: file
+      key: avatar
+      src:
+        - /C:/Users/GAJENDRA/OneDrive/Pictures/Screenshots/Screenshot 2026-09-07 224127.png
+      description: ""
+      disabled: false
+    - type: file
+      key: coverImage
+      src:
+        - /C:/Users/GAJENDRA/OneDrive/Pictures/Screenshots/Screenshot 2026-08-11 145800.png
+      description: ""
+      disabled: false
 order: 1789013465770

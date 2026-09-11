@@ -10,7 +10,9 @@ body:
 
     {\r
 
-    \    \"email\":\"gajendra@123\"\r
+    \    \"email\":\"naveen@gmail.com\",\r
+
+    \    \"password\":\"gajendra\"\r
 
     }"
 order: 3269139243247311
