@@ -1,0 +1,14 @@
+$kind: http-request
+description: ""
+url: http://localhost:8000/api/v1/users/avatar
+method: PATCH
+body:
+  type: formdata
+  content:
+    - type: file
+      key: avatar
+      src:
+        - /C:/Users/GAJENDRA/OneDrive/Pictures/Screenshots/Screenshot 2026-09-07 175910.png
+      description: ""
+      disabled: false
+order: 4499709046258467

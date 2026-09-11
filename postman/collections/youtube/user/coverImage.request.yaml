@@ -1,0 +1,16 @@
+$kind: http-request
+description: ""
+url: http://localhost:8000/api/v1/users/c/:username
+method: GET
+pathVariables:
+  username: ankur
+body:
+  type: formdata
+  content:
+    - type: file
+      key: coverImage
+      src:
+        - /C:/Users/GAJENDRA/OneDrive/Pictures/Screenshots/Screenshot 2026-09-10 150731.png
+      description: ""
+      disabled: false
+order: 4501094383228634

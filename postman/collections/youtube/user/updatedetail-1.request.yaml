@@ -1,0 +1,19 @@
+$kind: http-request
+name: updatedetail
+description: ""
+url: http://localhost:8000/api/v1/users/updatedetail
+method: PATCH
+body:
+  type: json
+  content: "\r
+
+    {\r
+
+    \    \"username\":\"ankur\",\r
+
+    \    \"fullName\":\"ankur yadav\",\r
+
+    \    \"email\":\"ankur@gamil.com\"\r
+
+    }"
+order: 4492973673933442

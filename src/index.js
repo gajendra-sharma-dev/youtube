@@ -10,7 +10,7 @@ dotenv.config({
 
 connectDB().then(()=>{
      app.listen(port,()=>{
-        console.log("hello");
+
         
     console.log(`app is listning on ${port}`);
     

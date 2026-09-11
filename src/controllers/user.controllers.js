@@ -177,8 +177,8 @@ const loginUser = asynchandler(async(req,res)=>{
 })
 
  const logoutUser = asynchandler(async(req,res)=>{
-  User.findByIdAndUpdate(req.user._id,{$set:{
-    refreshToken:undefined
+  User.findByIdAndUpdate(req.user._id,{$unset:{
+    refreshToken:1
   }},
   {
     new : true
@@ -216,7 +216,7 @@ const options ={
        process.env.REFRESH_TOKEN_SECRET
       )
  
-   const user =   User.findById(decodedToken?._id)
+   const user =  await User.findById(decodedToken?._id)
  
       if(!user) { 
        throw new Apierror(410,"Invaild refresh token")
@@ -238,7 +238,7 @@ const options ={
  
         return res
         .status(200)
-        .ookie("AccessToken",AccessToken,options)
+        .cookie("AccessToken",AccessToken,options)
         .cookie("refreshToken",newrefreshToken,options)
         .json(
          new Apiresponse(200,{AccessToken,refreshToken:newrefreshToken},"access token refersh successfully")
@@ -266,14 +266,15 @@ const options ={
 
     return res.
     status(200).
-    json(200,{},"password change successfully")
+    json(new Apiresponse(200,"password change successfully"))
     
  })
 
  const getCurrentUser = asynchandler(async(req,res)=>{
     return res.
     status(200).
-    json(200,req.user,"currentUser fetch successfully")
+    json(new Apiresponse(200,req.user,"currentUser fetch successfully"))
+   
  })
 
  const updateAccoutDetail = asynchandler(async(req,res)=>{
@@ -366,7 +367,7 @@ const options ={
           from:"subcriptions",
           localField:"_id",
           foreignField:"channal",
-          as:"Subcribers"
+          as:"subcribers"
         }
       },
       
@@ -374,22 +375,22 @@ const options ={
          $lookup:{
           from:"subcriptions",
           localField:"_id",
-          foreignField:"Subcribers",
-          as:"Subcriberto"
+          foreignField:"Subcriber",
+          as:"subscriberto"
         }
 
       },
       {
         $addFields:{
           subcribersCout:{
-            $size:"$subscribers"
+            $size:"$subcribers"
           },
           channalSubcribeCount:{
             $size:"$subscriberto"
           },
           isSubscribe:{
             $cond:{
-              if:{$in:[req.user?._id,"$subscribes.Subcriber"]},
+              if:{$in:[req.user?._id,"$subcribers.Subcriber"]},
               then:true,
               else:false
             } 
