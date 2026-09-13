@@ -1,9 +1,7 @@
 $kind: http-request
 description: ""
-url: http://localhost:8000/api/v1/users/c/:username
+url: http://localhost:8000/api/v1/users/history
 method: GET
-pathVariables:
-  username: ankur
 body:
   type: formdata
   content:

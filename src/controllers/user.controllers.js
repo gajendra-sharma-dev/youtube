@@ -5,7 +5,7 @@ import {User} from "../models/user.models.js"
 import {uploadCloudinary}  from "../utils/cloudnary.js"
 import {Apiresponse}  from "../utils/Apiresponse.js"
 import jwt from "jsonwebtoken"
-import { application } from "express";
+
 import mongoose from "mongoose";
 
 
@@ -355,7 +355,7 @@ const options ={
       throw new Apierror(400,"username is missing")
     }
 
- const channal =  await User.aggregate([
+ const channal =  await User.aggregate([       // channal ak array hota hai
       {
         $match:{
           username:username?.toLowerCase()
@@ -429,7 +429,7 @@ const options ={
   const user = await User.aggregate([
     {
       $match:{
-        _id:new mongoose.Types.ObjectId(req.user?._id)
+        _id:new mongoose.Types.ObjectId(req.user?._id)    //mongodb user ki id hoti hai vo staring me hoti hai vo nhi samhj tha esliye
       }
     },
      {
