@@ -78,4 +78,20 @@ const updatetweet = asynchandler(async(req,res)=>{
       json(200,{},"tweet delete successfully")
 
    })
-export {postTwitter, updatetweet,deletetweet}
+
+   const getUserTweets = asynchandler(async (req, res) => {
+  const { userId } = req.params;
+
+  if (!mongoose.isValidObjectId(userId)) {
+    throw new Apierror(400, "Invalid user id");
+  }
+
+  const tweets = await Tweet.find({ owner: userId })
+    .populate("owner", "username avatar")
+    .sort({ createdAt: -1 });
+
+  return res
+    .status(200)
+    .json(new Apiresponse(200, tweets, "User tweets fetched successfully"));
+});
+export {postTwitter, updatetweet,deletetweet,getUserTweets}

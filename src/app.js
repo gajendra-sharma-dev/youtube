@@ -21,13 +21,29 @@ app.use(cookieParser())
 //router
 
 import userRouter  from "./router/user.router.js"
-
 import commentRouter from "./router/comment.router.js"
+import dashBoardRouter from "./router/dashBoard.roter.js"
+import  healthcheck  from "./router/health.router.js"
+import playListRouter from "./router/playlist.router.js"
+import likeRouter from "./router/like.router.js"
+import tweetRouter from "./router/tweet.router.js"
+import videoRouter from "./router/video.router.js"
+import subcriptionRouter from "./routes/subcription.routes.js";
 
 
 app.use("/api/v1/users",userRouter)  //https://localhost/api/v1/users/register  and /https://localhost/users/login
 
 app.use("/api/v1/comments",commentRouter)
+app.use("/api/v1/dashboard",dashBoardRouter)
+app.use("api/v1/healthcheck",healthcheck)
+app.use("/api/v1/playlist",playListRouter)
+app.use("/api/v1/likes",likeRouter)
+app.use("/api/v1/tweets", tweetRouter);
+app.use("/api/v1/videos", videoRouter);
+app.use("/api/v1/subscriptions", subcriptionRouter);
+
+
+
 
 
 app.use((err, req, res, next) => {
