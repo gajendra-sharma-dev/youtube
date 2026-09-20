@@ -1,0 +1,4 @@
+$kind: http-request
+url: http://localhost:4000/api/v1/todo/deleteTodo/6aabc1cebed984f51172d7af
+method: DELETE
+order: 941406001124458

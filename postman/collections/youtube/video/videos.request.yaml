@@ -1,0 +1,30 @@
+$kind: http-request
+description: ""
+url: http://localhost:8000/api/v1/videos
+method: POST
+body:
+  type: formdata
+  content:
+    - type: text
+      key: title
+      value: gajju
+      description: ""
+      disabled: false
+    - type: text
+      key: description
+      value: it is good video
+      description: ""
+      disabled: false
+    - type: file
+      key: videoFiles
+      src:
+        - /C:/Users/GAJENDRA/OneDrive/Documents/video.mp4
+      description: ""
+      disabled: false
+    - type: file
+      key: thumbnail
+      src:
+        - /C:/Users/GAJENDRA/OneDrive/Pictures/IMG20260627211010.jpg
+      description: ""
+      disabled: false
+order: 3437542320552536

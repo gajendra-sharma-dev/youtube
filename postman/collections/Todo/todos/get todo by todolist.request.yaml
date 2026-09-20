@@ -1,0 +1,7 @@
+$kind: http-request
+description: ""
+url: http://localhost:4000/api/v1/todo/getTodoByTodolist/6aabc151bed984f51172d7ad
+method: GET
+body:
+  type: urlencoded
+order: 3952255198743115

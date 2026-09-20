@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{server}}playlist/add/6aaeb9fc7dea82966e115f72/6aaf9109ddbf3118f29e2bff"
+method: PATCH
+order: 4454475379131984

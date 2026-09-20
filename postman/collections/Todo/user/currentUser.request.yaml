@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{server}}/currentUser"
+method: GET
+body:
+  type: json
+  content: ""
+order: 4433027429471935

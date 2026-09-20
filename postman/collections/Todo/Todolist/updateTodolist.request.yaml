@@ -1,0 +1,10 @@
+$kind: http-request
+description: ""
+url: http://localhost:4000/api/v1/todos/deletetodoList/6aaa8513ec2a5f34ea0ed83a
+method: DELETE
+body:
+  type: urlencoded
+  content:
+    name: cricket
+    description: in morning i play some cricket
+order: 4492007282534822

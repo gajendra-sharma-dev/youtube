@@ -1,0 +1,10 @@
+$kind: http-request
+description: ""
+url: http://localhost:4000/api/v1/todo/updateTodo/6aabc1cebed984f51172d7af
+method: PATCH
+body:
+  type: urlencoded
+  content:
+    title: gajendra
+    Status: completed
+order: 2612179122429031

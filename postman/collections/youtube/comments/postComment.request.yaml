@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{server}}comments/6aaeb9fc7dea82966e115f72"
+method: POST
+body:
+  type: urlencoded
+  content:
+    content: it is good content video
+order: 1180611353022271

@@ -1,0 +1,12 @@
+$kind: http-request
+url: "{{server}}comments/c/6aaecb57a9e1fcabf7c62659"
+method: PATCH
+body:
+  type: formdata
+  content:
+    - type: text
+      key: newcontent
+      value: it is very very good video
+      description: ""
+      disabled: false
+order: 2208625969046315

@@ -1,0 +1,5 @@
+$kind: http-request
+description: ""
+url: http://localhost:4000/api/v1/todos/getUserlist/6aaa539faf32467b67a69f58
+method: GET
+order: 4358643848285697

@@ -15,7 +15,7 @@ const genratedAccessAndRefreshtoken = async(userId) => {
    const AccessToken =   user.generateAccessToken()
    const  refreshToken =    user.generateRefreshToken()
     
-    user. refreshToken = refreshToken
+    user.refreshToken = refreshToken
    await user.save({validateBeforeSave:false})
 
    return {AccessToken, refreshToken}
@@ -61,7 +61,6 @@ if (!validator.isEmail(email)) {
 }
 
 const ExistingUser = await User.findOne({$or:[{username},{email}]
-
 })  //es name ya email ka user ager hai to mile jayga
 
 

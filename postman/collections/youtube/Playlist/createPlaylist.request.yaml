@@ -1,0 +1,9 @@
+$kind: http-request
+url: "{{server}}playlist/"
+method: POST
+body:
+  type: urlencoded
+  content:
+    name: gajendra
+    description: here all java and c++ dsa completed
+order: 1789883693745

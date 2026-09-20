@@ -1,0 +1,11 @@
+$kind: http-request
+name: updateDetail
+description: ""
+url: "{{server}}/update"
+method: PATCH
+body:
+  type: urlencoded
+  content:
+    name: sourabh
+    email: souirabh@gamil.com
+order: 4493491596815902

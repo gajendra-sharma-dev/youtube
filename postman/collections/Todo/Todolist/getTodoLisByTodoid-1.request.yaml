@@ -1,0 +1,6 @@
+$kind: http-request
+name: getTodoLisByTodoid
+description: ""
+url: http://localhost:4000/api/v1/todos/getlistById/6aaa8513ec2a5f34ea0ed83a
+method: GET
+order: 4479046899572478

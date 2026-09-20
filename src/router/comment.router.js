@@ -7,9 +7,9 @@ import {verfiyJwt} from "../middlewares/auth.middleware.js"
 const router = Router()
 router.use(verfiyJwt);
 
-router.route("/c/:commentId").get(getVideoComment)
-router.route("/commentId").post(getComment)
-router.route("/c/:commentId").delete(updateComment)
+router.route("/c/:videoId").get(getVideoComment)
+router.route("/:videoId").post(getComment)
+router.route("/c/:commentId").patch(updateComment)
 router.route("/c/:commentId").delete(deleteComment)
 
 

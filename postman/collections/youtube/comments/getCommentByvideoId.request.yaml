@@ -1,4 +1,4 @@
 $kind: http-request
-url: ""
+url: "{{server}}comments/c/6aaeb9fc7dea82966e115f72"
 method: GET
 order: 1789235562940

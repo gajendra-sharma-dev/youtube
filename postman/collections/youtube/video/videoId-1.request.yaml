@@ -1,0 +1,11 @@
+$kind: http-request
+name: videoId
+description: ""
+url: http://localhost:8000/api/v1/videos/?videoId=6aa820e457ec149eae9f1ad1
+method: GET
+queryParams:
+  - key: videoId
+    value: 6aa820e457ec149eae9f1ad1
+    disabled: false
+    description: ""
+order: 4463201375072930

@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{server}}dashboard/stats"
+method: GET
+order: 1789883058645

@@ -1,0 +1,6 @@
+$kind: http-request
+url: http://localhost:4000/api/v1/todo/gettodo/6aabc1cebed984f51172d7af
+method: GET
+body:
+  type: urlencoded
+order: 1789639972315

@@ -1,0 +1,33 @@
+$kind: http-request
+url: http://localhost:8000/api/v1/videos?videoId=6aa820e457ec149eae9f1ad1
+method: GET
+queryParams:
+  - key: videoId
+    value: 6aa820e457ec149eae9f1ad1
+    disabled: false
+    description: ""
+body:
+  type: formdata
+  content:
+    - type: text
+      key: videoId
+      value: 6aa820e457ec149eae9f1ad1
+      description: ""
+      disabled: true
+    - type: text
+      key: title
+      value: gajendra
+      description: ""
+      disabled: false
+    - type: text
+      key: description
+      value: this video is a big bandra
+      description: ""
+      disabled: false
+    - type: file
+      key: thumbnail
+      src:
+        - /C:/Users/GAJENDRA/OneDrive/Pictures/IMG20260627211010.jpg
+      description: ""
+      disabled: false
+order: 4467319649710283

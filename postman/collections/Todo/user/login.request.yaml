@@ -1,0 +1,10 @@
+$kind: http-request
+url: "{{server}}/login"
+method: POST
+body:
+  type: urlencoded
+  content:
+    name: naveen
+    email: naveen@gmail.com
+    password: "123"
+order: 1560886470001

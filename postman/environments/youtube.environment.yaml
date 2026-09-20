@@ -2,3 +2,5 @@ name: youtube
 values:
   - key: server
     value: ''
+  - key: tweet
+    value: ''

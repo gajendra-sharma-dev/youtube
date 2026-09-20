@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{tweet}}tweets/user/6aa8206557ec149eae9f1ad0"
+method: GET
+order: 615314059645426

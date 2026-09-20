@@ -1,0 +1,10 @@
+$kind: http-request
+url: "{{server}}playlist/6aaf75ec7aec064f79ff7a89"
+method: PATCH
+body:
+  type: urlencoded
+  content:
+    "": ""
+    newname: anku yadav
+    newdescription: all haking videos
+order: 4079591551045857

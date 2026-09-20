@@ -10,7 +10,7 @@ import mongoose from "mongoose";
 const postTwitter = asynchandler(async(req,res)=>{
     const {tweets} = req.body
 
-     if(!tweets) {
+     if(!tweets?.trim()) {
       throw new Apierror(400,"tweets is required")
      }
 

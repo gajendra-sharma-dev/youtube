@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{tweet}}tweets/"
+method: POST
+body:
+  type: urlencoded
+  content:
+    tweets: good video
+order: 1789835264623

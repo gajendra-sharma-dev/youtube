@@ -2,7 +2,7 @@
 import mongoose from "mongoose";
 import { Video } from "../models/video.models.js";
 import { Subcription } from "../models/subcription.models.js";
-import { Like } from "../models/like.models.js";
+import { Like } from "../models/likes.models.js";
 
 import { Apiresponse } from "../utils/Apiresponse.js";
 import { asynchandler } from "../utils/asynchandler.js";

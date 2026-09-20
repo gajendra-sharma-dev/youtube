@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{server}}likes/toggle/v/6aa820e457ec149eae9f1ad1"
+method: POST
+order: 1789837145562

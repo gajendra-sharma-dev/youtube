@@ -4,11 +4,11 @@ import {
   getChannelSubscribers,
   getSubscribedChannels
 } from "../controllers/subcription.controllers.js";
-import { verifyJWT } from "../middlewares/auth.middleware.js";
+import { verfiyJwt } from "../middlewares/auth.middleware.js";
 
 const router = Router();
 
-router.use(verifyJWT);
+router.use(verfiyJwt);
 
 router.route("/c/:channelId")
   .post(toggleSubscription)

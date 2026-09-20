@@ -1,0 +1,12 @@
+$kind: http-request
+name: register
+description: ""
+url: "{{server}}/register"
+method: POST
+body:
+  type: urlencoded
+  content:
+    name: gajendrakumar
+    email: gajendrakumar@123gmail.com
+    password: "123"
+order: 4411166345050798

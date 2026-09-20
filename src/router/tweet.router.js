@@ -1,10 +1,10 @@
 import { Router } from "express";
 import {postTwitter, updatetweet,deletetweet,getUserTweets} from "../controllers/tweet.controllers.js";
-import { verifyJWT } from "../middlewares/auth.middleware.js";
+import { verfiyJwt } from "../middlewares/auth.middleware.js";
 
 const router = Router();
 
-router.use(verifyJWT);
+router.use(verfiyJwt);
 
 router.route("/").post(postTwitter);
 router.route("/user/:userId").get(getUserTweets);

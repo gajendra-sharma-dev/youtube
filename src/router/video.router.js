@@ -8,12 +8,12 @@ import {
   deleteVideo,
   togglePublishStatus
 } from "../controllers/video.controllers.js";
-import { verifyJWT } from "../middlewares/auth.middleware.js";
-import { upload } from "../middlewares/multer.middleware.js";
+import { verfiyJwt } from "../middlewares/auth.middleware.js";
+import { upload } from "../middlewares/multer.middlewares.js";
 
 const router = Router();
 
-router.use(verifyJWT);
+router.use(verfiyJwt);
 
 router.route("/")
   .get(getAllVideos)

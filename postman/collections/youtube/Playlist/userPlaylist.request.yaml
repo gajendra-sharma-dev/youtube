@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{server}}playlist/user/6aa8206557ec149eae9f1ad0"
+method: GET
+order: 1817145439400012

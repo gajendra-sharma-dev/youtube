@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{server}}playlist/6aaf75ec7aec064f79ff7a89"
+method: DELETE
+order: 4207260930455763

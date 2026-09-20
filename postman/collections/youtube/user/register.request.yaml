@@ -7,17 +7,17 @@ body:
   content:
     - type: text
       key: username
-      value: naveen
+      value: raju
       description: ""
       disabled: false
     - type: text
       key: fullName
-      value: naveenkuamr
+      value: rajusharma
       description: ""
       disabled: false
     - type: text
       key: email
-      value: naveen@gmail.com
+      value: rajusharma@gmail.com
       description: ""
       disabled: false
     - type: text
@@ -28,13 +28,13 @@ body:
     - type: file
       key: avatar
       src:
-        - /C:/Users/GAJENDRA/OneDrive/Pictures/Screenshots/Screenshot 2026-09-07 224127.png
+        - /C:/Users/GAJENDRA/OneDrive/Pictures/Screenshots/Screenshot 2026-09-07 175910.png
       description: ""
       disabled: false
     - type: file
       key: coverImage
       src:
-        - /C:/Users/GAJENDRA/OneDrive/Pictures/Screenshots/Screenshot 2026-08-11 145800.png
+        - /C:/Users/GAJENDRA/OneDrive/Pictures/IMG20260627211010.jpg
       description: ""
       disabled: false
 order: 1789013465770

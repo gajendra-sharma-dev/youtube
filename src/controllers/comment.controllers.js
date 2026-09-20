@@ -4,6 +4,7 @@ import {Apiresponse}  from "../utils/Apiresponse.js"
 import mongoose from "mongoose";
 import {Comment}   from "../models/comments.models.js"
 import  {Video} from "../models/video.models.js"
+import {User} from "../models/user.models.js"
 
    const getVideoComment = asynchandler(async(req, res) => {
     const { videoId } = req.params;
@@ -18,7 +19,9 @@ import  {Video} from "../models/video.models.js"
         {
             $match:{
                  video: new mongoose.Types.ObjectId(videoId)
-            },
+            }
+          },
+          {
 
             $lookup:{
                 from:"User",
@@ -26,12 +29,13 @@ import  {Video} from "../models/video.models.js"
           foreignField:"_id",
           as:"owner",
 
+
           pipeline:[
              {
                 $project:{
-                    username,
-                    avatar,
-                    fullName
+                    username:1,
+                    avatar:1,
+                    fullName:1
                 }
              }
           ]
@@ -72,7 +76,7 @@ const getComment = asynchandler(async(req,res)=>{
     const {videoId} = req.params
     const {content} = req.body
 
-    if(content?.trim()) {
+    if(!content || content?.trim() === "") {
         throw new Apierror(400,"content is missing")
     }
 
@@ -104,34 +108,34 @@ if (!video) {
 
 const updateComment = asynchandler(async(req,res)=>{
     const {commentId} = req.params
-    const {newconetnt} = req.body
+    const {newcontent} = req.body
     if(!mongoose.isValidObjectId(commentId)){
      throw new Apierror(400, "Invalid comment id");
     }
 
-   if(!newconetnt){
+   if(!newcontent || newcontent?.trim() === ""){
     throw new Apierror(400,"if you update comment please add newcomment")
    }
 
    
     const comment = await Comment.findById(commentId);
   if (!comment) {
-  throw new Apierror(404, "comment not found");
+  throw new Apierror(400, "comment not found");
 }
    
  // Sirf comment ka owner hi update kar sake
   if (comment.owner.toString() !== req.user?._id.toString()) {
-    throw new Apierror(403, "You are not authorized to update this comment");
+    throw new Apierror(400, "You are not authorized to update this comment");
   }
 
       
  const updatecomment = await Comment.findByIdAndUpdate(
   commentId, 
-  { content: newconetnt }, 
+  { content: newcontent }, 
   { new: true }
 );
 
-res.send(200).
+return res.status(200).
 json(new Apiresponse(200,updatecomment,"your comment update"))
 
    
@@ -147,18 +151,18 @@ const deleteComment =  asynchandler(async(req,res)=>{
 
     const comment = await Video.findById(commentId);
 if (!comment) {
-  throw new Apierror(404, "Video not found");
+  throw new Apierror(400, "Video not found");
 }
    
   
   // Sirf comment ka owner hi delete kar sake
   if (comment.owner.toString() !== req.user?._id.toString()) {
-    throw new Apierror(403, "You are not authorized to delete this comment");
+    throw new Apierror(400, "You are not authorized to delete this comment");
   }
 
    await Comment.findByIdAndDelete(commentId)
 
-   res.status(200).
+  return res.status(200).
    json(200,{},"comment delete successfully")
 })
 

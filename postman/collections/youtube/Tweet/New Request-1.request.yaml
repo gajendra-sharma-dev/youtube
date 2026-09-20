@@ -1,0 +1,10 @@
+$kind: http-request
+name: New Request
+description: ""
+url: "{{tweet}}tweets/6aaebb13345628a7637bf8fb"
+method: PATCH
+body:
+  type: urlencoded
+  content:
+    tweets: very very good video
+order: 4373900326598826

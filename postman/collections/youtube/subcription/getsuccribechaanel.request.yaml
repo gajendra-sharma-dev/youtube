@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{server}}subscriptions/u/6aa2d20df4fd5aa38830323a"
+method: GET
+order: 3397590105161415

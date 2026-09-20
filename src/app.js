@@ -28,14 +28,14 @@ import playListRouter from "./router/playlist.router.js"
 import likeRouter from "./router/like.router.js"
 import tweetRouter from "./router/tweet.router.js"
 import videoRouter from "./router/video.router.js"
-import subcriptionRouter from "./routes/subcription.routes.js";
+import subcriptionRouter from "./router/subcription.router.js";
 
 
 app.use("/api/v1/users",userRouter)  //https://localhost/api/v1/users/register  and /https://localhost/users/login
 
 app.use("/api/v1/comments",commentRouter)
 app.use("/api/v1/dashboard",dashBoardRouter)
-app.use("api/v1/healthcheck",healthcheck)
+app.use("/api/v1/healthcheck",healthcheck)
 app.use("/api/v1/playlist",playListRouter)
 app.use("/api/v1/likes",likeRouter)
 app.use("/api/v1/tweets", tweetRouter);
@@ -52,6 +52,7 @@ app.use((err, req, res, next) => {
         success: false,
         message: err.message || "Internal Server Error"
     })
+   
 })
 
 export {app}

@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{server}}healthcheck/"
+method: GET
+order: 1789893650075

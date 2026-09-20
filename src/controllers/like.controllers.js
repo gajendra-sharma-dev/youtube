@@ -9,7 +9,7 @@ const toggleVideoLike = asynchandler(async(req,res)=>{
     const {videoId}  = req.params
 
     if(!mongoose.isValidObjectId(videoId)) {
-        throw new Apierror(400,"video id does not exit")
+        throw new Apierror(400,"video id does not exist")
     }
 
     const isExiting = await Like.findOne({
@@ -18,7 +18,7 @@ const toggleVideoLike = asynchandler(async(req,res)=>{
     })
 
     if(isExiting) {
-        await Like.findByIdAndUpdate(isExiting._id)
+        await Like.findByIdAndDelete(isExiting._id)
     
     return res.status(200).
     json(new Apiresponse(200,{isLike:false},"unlike successfully"))
@@ -34,62 +34,62 @@ const toggleVideoLike = asynchandler(async(req,res)=>{
 })
 
 
-const toggleCommentLike = asynchandler(async(res,req)=>{
-    const {commment_id} = req.params
+const toggleCommentLike = asynchandler(async(req,res)=>{
+    const {commentId} = req.params
 
-    if(!mongoose.isValidObjectId(commment_id)){
-        throw new Apierror("comment id does not exit")
+    if(!mongoose.isValidObjectId(commentId)){
+        throw new Apierror(400,"comment id does not exit")
     }
     const isExiting = await Like.findOne(
         {
-            comment:commment_id,
+            comment:commentId,
             likeBy:req.user?._id
         }
     )
         if(isExiting){
-             await Like.findByIdAndUpdate(isExiting._id)
+             await Like.findByIdAndDelete(isExiting._id)
             return res.status(200).
             json(new Apiresponse(200,{isLike : false},"comment unlike successfully"))
         }
     await Like.create({
-        comment:commment_id,
+        comment:commentId,
         likeBy:req.user?._id
     })
 
-    res.status(200).
-    json(200,{islike:true},"comment like successfully")
+   return res.status(200).
+    json(new Apiresponse(200,{islike:true},"comment like successfully"))
 
 })
 
 const toggleTweetLike = asynchandler(async(req,res)=>{
-     const {tweet_id} = req.params
+     const {tweetId} = req.params
 
-    if(!mongoose.isValidObjectId(tweet_id)){
+    if(!mongoose.isValidObjectId(tweetId)){
         throw new Apierror("tweet id does not exit")
     }
     const isExiting = await Like.findOne(
         {
-            tweet:tweet_id,
+            tweet:tweetId,
             likeBy:req.user?._id
         }
     )
         if(isExiting){
-             await Like.findByIdAndUpdate(isExiting._id)
+             await Like.findByIdAndDelete(isExiting._id)
             return res.status(200).
             json(new Apiresponse(200,{isLike : false},"tweet unlike successfully"))
         }
     await Like.create({
-       tweet:tweet_id,
+       tweet:tweetId,
        likeBy:req.user?._id
     })
 
-    res.status(200).
-    json(200,{islike:true},"tweet like successfully")
+  return  res.status(200).
+    json(new Apiresponse(200,{islike:true},"tweet like successfully"))
 
 })
 
 // 4. Get all liked videos (by current user)
-const getLikedVideos = asyncHandler(async (req, res) => {
+const getLikedVideos = asynchandler(async (req, res) => {
   const likedVideos = await Like.find({
     likedBy: req.user?._id,
     video: { $ne: null }   // sirf wahi jaha "video" field bhari hai
@@ -97,7 +97,7 @@ const getLikedVideos = asyncHandler(async (req, res) => {
 
   return res
     .status(200)
-    .json(new ApiResponse(200, likedVideos, "Liked videos fetched successfully"));
+    .json(new Apiresponse(200, likedVideos, "Liked videos fetched successfully"));
 });
 
 

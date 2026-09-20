@@ -1,0 +1,16 @@
+$kind: http-request
+name: updateComment
+description: ""
+url: "{{server}}comments/c/6aaecb57a9e1fcabf7c62659"
+method: PATCH
+body:
+  type: json
+  content: "\r
+
+    {\"newcontent\":\"it is very bad video\"}"
+settings:
+  strictSSL: false
+  followRedirects: true
+  disableCookies: false
+  maxResponseSize: 52428800
+order: 3634724748518461
